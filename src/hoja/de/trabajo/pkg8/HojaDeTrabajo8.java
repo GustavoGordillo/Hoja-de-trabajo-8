@@ -28,21 +28,11 @@ public class HojaDeTrabajo8 {
             
             if(opp == 1){
                 System.out.print("Ingrese su cadena a continuacion:\n");
-                String op2 = _in.nextLine();                
-                switch(opcion)
-            {               
-                case 1:  
-                    clasificar = new Aussortieren(opcion);                                        
-                    break;
-                      
-            }
-                
-            }
-            
-            
-            
-            
+                String vacio = _in.nextLine();
+                String cadena = _in.next();
+                clasificar = new Aussortieren(cadena);                
+                System.out.println(clasificar.toString());
+            }            
         } 
-
     }
 }

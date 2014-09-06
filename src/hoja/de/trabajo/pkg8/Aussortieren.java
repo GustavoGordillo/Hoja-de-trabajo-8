@@ -6,22 +6,24 @@ public class Aussortieren {
     private int numX;
     private StringBuilder st;
     private int[] numLetras;
+    private String cuerpo;
      
     public Aussortieren(String cadena){
-        this.cadena = cadena;
+        this.cadena = cadena;      
         this.numX = 0;
         this.numLetras = new int[25];
+        st =  new StringBuilder();
+        clasicarCadena(cadena.length());
     }
-    
-       
-    public void clasicarCadena(){                
-        for(int i =0;i == cadena.length(); i++){
-            for(int s = 0; s == cadena.length(); s++){
+           
+    public void clasicarCadena(int num){                
+        for(int i =0;i < cadena.length(); i++){
+            for(int s = 0; s < cadena.length(); s++){
                 if(cadena.charAt(i) == cadena.charAt(s)){
                     numX = numX +1;
-                    numLetras[i] = numX;
-                    st =  new StringBuilder().append(cadena.charAt(i));                    
+                    numLetras[i] = numX;                    
                 }
+                numX=0;
             }                 
         }        
     } 
@@ -50,8 +52,12 @@ public class Aussortieren {
         this.st = st;
     }
     
-    public String toString ()                                              
-   {
-    return "CADENA INGRESADA: "+this.cadena+"\n";
+    public String toString (){   
+       String titulo = "CADENA INGRESADA: "+this.cadena+"\n";       
+       for(int k = 0; k < cadena.length();k++){           
+           cuerpo = "Letra:"+st.charAt(k)+"/ Repetida: "+numLetras[k]+"veces";
+           System.out.println(cuerpo);
+       }
+       return    titulo;
    }
 }
