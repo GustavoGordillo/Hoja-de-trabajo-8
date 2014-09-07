@@ -4,15 +4,17 @@ package hoja.de.trabajo.pkg8;
 public class Aussortieren {
     private String cadena;
     private int numX;
-    private StringBuilder st;
+    private StringBuilder st,filtro;
     private int[] numLetras;
-    private String cuerpo;
+    private String[] cuerpo;
      
     public Aussortieren(String cadena){
         this.cadena = cadena;      
         this.numX = 0;
         this.numLetras = new int[25];
+        this.cuerpo = new String[25];
         st =  new StringBuilder();
+        filtro =  new StringBuilder();        
         clasicarCadena(cadena.length());
     }
            
@@ -20,13 +22,16 @@ public class Aussortieren {
         for(int i =0;i < cadena.length(); i++){
             for(int s = 0; s < cadena.length(); s++){
                 if(cadena.charAt(i) == cadena.charAt(s)){
-                    numX = numX +1;
-                    numLetras[i] = numX;                    
-                }
-                numX=0;
-            }                 
+                    numX = numX +1;                                        
+                }                                
+            }            
+            numLetras[i] = numX;           
+            st =  st.append(cadena.charAt(i)); 
+            numX=0;
         }        
+        st =  st.append('s'); 
     } 
+    
     
     public String getCadena() {
         return cadena;
@@ -55,8 +60,12 @@ public class Aussortieren {
     public String toString (){   
        String titulo = "CADENA INGRESADA: "+this.cadena+"\n";       
        for(int k = 0; k < cadena.length();k++){           
-           cuerpo = "Letra:"+st.charAt(k)+"/ Repetida: "+numLetras[k]+"veces";
-           System.out.println(cuerpo);
+           if(st.charAt(k+1)!= st.charAt(k)){
+               cuerpo[k] = "Letra:"+st.charAt(k)+"/ Repetida: "+numLetras[k]+"veces";
+               System.out.println(cuerpo[k]);
+           }
+           
+           
        }
        return    titulo;
    }
