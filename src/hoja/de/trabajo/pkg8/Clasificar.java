@@ -9,13 +9,14 @@ public class Clasificar {
      
     public Clasificar(String cadena){
          this.cadena = cadena;
-         repetidas = new int[cadena.length()];                  
+         repetidas = new int[];                  
          clasificarCadena(cadena);
      }
      
      public void clasificarCadena(String cadena){
          
-         cad = new String[cadena.length()];         
+         cant= cadena.length();
+         cad = new String[cant];         
          cadenaNueva = cadena;
          StringBuilder concatenar;         
          int numX = 0;
@@ -43,9 +44,9 @@ public class Clasificar {
          }  
          int f = 0;
          int s = 0;
-         String[] caden = new String[cadena.length()];
-         int[] num = new int[cadena.length()];                               
-         while(f<cadena.length()){
+         String[] caden = new String[20];
+         int[] num = new int[20];                               
+         while(f<20){
              if(cad[f] != null){
                  caden[s] = cad[f];
                  num[s] = repetidas[f];
@@ -56,7 +57,44 @@ public class Clasificar {
          cad = caden;
          repetidas = num;           
      }    
-          
+    public VectorHeap Arbol()
+    {
+        List<Nodo> cantidad = new SinglyLinkedList<Nodo>();
+        for (int k = 0; k < cadena.length(); k++) {             
+             if(cad[k]!=  null){
+                 Nodo quey = new Nodo(cad[k],repetidas[k]);
+                 Nodo elemento = cantidad.remove(quey);
+            
+            if(elemento == null){
+                cantidad.addFirst(quey);
+            } 
+            else {
+                cantidad.addFirst(elemento);
+            }
+             }
+        }
+        VectorHeap<ArbolHuffman> arboles = new VectorHeap<ArbolHuffman>();
+        for(Nodo n : cantidad){
+            arboles.add(new ArbolHuffman(n));
+        }
+        
+        Iterator ti =arboles.iterator();
+        /* Si alguno de los nodos se mantiene se mezclan */
+        while(arboles.size() > 1){
+            /* Obtiene los dos arboles siguientes */
+            ti=arboles.iterator();
+            ArbolHuffman pequeñito=(ArbolHuffman)ti.next();
+            ArbolHuffman pequeño=(ArbolHuffman)ti.next();
+            arboles.remove(pequeñito);
+            arboles.remove(pequeño);
+            
+            /* Ingresa los nuevos arboles a la foresta y los mezcla*/
+            arboles.add(new ArbolHuffman(pequeñito, pequeño));
+        }
+        ti =arboles.iterador();
+        return arboles;
+        
+    }
      public String toString(){         
          System.out.println("RESULTADOS");
          for (int k = 0; k < cadena.length(); k++) {             
