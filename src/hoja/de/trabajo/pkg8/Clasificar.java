@@ -1,6 +1,10 @@
 
 package hoja.de.trabajo.pkg8;
 
+import structure.BinaryTree;
+import java.util.*;
+import structure.SinglyLinkedList;
+import structure.VectorHeap;
 
 public class Clasificar {
     private int[] repetidas;
