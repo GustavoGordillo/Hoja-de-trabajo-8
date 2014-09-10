@@ -106,6 +106,44 @@ public class Clasificar {
          }
      }     
 
+//    // public VectorHeap Arbol()
+//    {
+//        List<Nodo> cantidad = new SinglyLinkedList<Nodo>();
+//        for (int k = 0; k < cadena.length(); k++) {             
+//             if(cad[k]!=  null){
+//                 Nodo quey = new Nodo(cad[k],repetidas[k]);
+//                 Nodo elemento = cantidad.remove(quey);
+//            
+//            if(elemento == null){
+//                cantidad.addFirst(quey);
+//            } 
+//            else {
+//                cantidad.addFirst(elemento);
+//            }
+//             }
+//        }
+//        VectorHeap<ArbolDeHuffman> arboles = new VectorHeap<ArbolDeHuffman>();
+//        for(Nodo n : cantidad){
+//    //        arboles.add(new ArbolDeHuffman(n));
+//        }
+//        
+//        Iterator ti =arboles.iterator();
+//        /* Si alguno de los nodos se mantiene se mezclan */
+//        while(arboles.size() > 1){
+//            /* Obtiene los dos arboles siguientes */
+//            ti=arboles.iterator();
+//            ArbolDeHuffman pequeñito=(ArbolDeHuffman)ti.next();
+//            ArbolDeHuffman pequeño=(ArbolDeHuffman)ti.next();
+//            arboles.remove(pequeñito);
+//            arboles.remove(pequeño);
+//            
+//            /* Ingresa los nuevos arboles a la foresta y los mezcla*/
+//  //          arboles.add(new ArbolHuffman(pequeñito, pequeño));
+//        }
+//        ti =arboles.iterador();
+//        return arboles;
+    //}
+     
      public String toString(){         
          System.out.println("RESULTADOS");
          for (int k = 0; k < cadena.length(); k++) {             

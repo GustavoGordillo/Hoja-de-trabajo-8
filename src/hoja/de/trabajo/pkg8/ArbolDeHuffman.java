@@ -9,10 +9,11 @@ package hoja.de.trabajo.pkg8;
  * @author Temp
  */
  
-     import structure.BinaryTree;
+import structure.BinaryTree;
+import structure.other;
 import java.util.HashMap;
 
-public class ArbolDeHuffman {
+
 
 public class ArbolDeHuffman implements Comparable<ArbolDeHuffman>{
     private BinaryTree<Nodo> raiz;
@@ -27,7 +28,7 @@ public class ArbolDeHuffman implements Comparable<ArbolDeHuffman>{
     //se construye la cabeza de dos arboles propios
     public ArbolDeHuffman(ArbolDeHuffman izq, ArbolDeHuffman der){
         valor = izq.valor + der.valor;
-        Nodo r = new Nodo(pesoTotal);
+        Nodo r = new Nodo(234);
         
         raiz = new BinaryTree<Nodo>(r, izq.raiz, der.raiz);
     }
