@@ -11,9 +11,17 @@ package hoja.de.trabajo.pkg8;
 public class Nodo {
     int frecuencia;     
     char caracter;           
+}
 
+public Nodo(int frecuencia) {
+        this.frecuencia = frecuencia;
+    }
 
-
+    //construye un nodo con el caracter y frecuencia 1
+    public Nodo(char caracter) {
+        this.caracter = caracter;
+        this.frecuencia = 1;
+    }
 
     //construye un nodo con el caracter y frecuencia 1
     public Nodo(char caracter,int frecuencia) {
