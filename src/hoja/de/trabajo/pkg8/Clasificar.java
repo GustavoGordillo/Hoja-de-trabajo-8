@@ -9,13 +9,13 @@ public class Clasificar {
      
     public Clasificar(String cadena){
          this.cadena = cadena;
-         repetidas = new int[20];                  
+         repetidas = new int[cadena.length()];                  
          clasificarCadena(cadena);
      }
      
      public void clasificarCadena(String cadena){
          
-         cad = new String[20];         
+         cad = new String[cadena.length()];         
          cadenaNueva = cadena;
          StringBuilder concatenar;         
          int numX = 0;
@@ -43,9 +43,9 @@ public class Clasificar {
          }  
          int f = 0;
          int s = 0;
-         String[] caden = new String[20];
-         int[] num = new int[20];                               
-         while(f<20){
+         String[] caden = new String[cadena.length()];
+         int[] num = new int[cadena.length()];                               
+         while(f<cadena.length()){
              if(cad[f] != null){
                  caden[s] = cad[f];
                  num[s] = repetidas[f];
