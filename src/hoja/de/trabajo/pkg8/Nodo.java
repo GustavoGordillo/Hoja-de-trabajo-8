@@ -12,15 +12,13 @@ public class Nodo {
     int frecuencia;     
     char caracter;           
 
-    //Asigan una frecuencia a un nodo en particular
-    public Nodo(int frecuencia) {
-        this.frecuencia = frecuencia;
-    }
+
+
 
     //construye un nodo con el caracter y frecuencia 1
-    public Nodo(char caracter) {
+    public Nodo(char caracter,int frecuencia) {
         this.caracter = caracter;
-        this.frecuencia = 1;
+        this.frecuencia = frecuencia;
     }
     
     @Override
