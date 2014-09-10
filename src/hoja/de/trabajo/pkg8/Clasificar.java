@@ -77,9 +77,9 @@ public class Clasificar {
             }
              }
         }
-        VectorHeap<ArbolHuffman> arboles = new VectorHeap<ArbolHuffman>();
+        VectorHeap<ArbolDeHuffman> arboles = new VectorHeap<ArbolDeHuffman>();
         for(Nodo n : cantidad){
-            arboles.add(new ArbolHuffman(n));
+            arboles.add(new ArbolDeHuffman(n));
         }
         
         Iterator ti =arboles.iterator();
@@ -87,8 +87,8 @@ public class Clasificar {
         while(arboles.size() > 1){
             /* Obtiene los dos arboles siguientes */
             ti=arboles.iterator();
-            ArbolHuffman pequeñito=(ArbolHuffman)ti.next();
-            ArbolHuffman pequeño=(ArbolHuffman)ti.next();
+            ArbolDeHuffman pequeñito=(ArbolDeHuffman)ti.next();
+            ArbolDeHuffman pequeño=(ArbolDeHuffman)ti.next();
             arboles.remove(pequeñito);
             arboles.remove(pequeño);
             
