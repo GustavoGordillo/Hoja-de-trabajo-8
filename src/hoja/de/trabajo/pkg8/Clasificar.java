@@ -39,17 +39,30 @@ public class Clasificar {
                  numX = 1;
                  repetidas[i]= numX;
                  numX =0;
+             }                          
+         }  
+         int f = 0;
+         int s = 0;
+         String[] caden = new String[20];
+         int[] num = new int[20];                               
+         while(f<20){
+             if(cad[f] != null){
+                 caden[s] = cad[f];
+                 num[s] = repetidas[f];
+                 s++;
              }
-             
-             
-         }
-         
+             f++;
+         }         
+         cad = caden;
+         repetidas = num;           
      }    
           
      public String toString(){         
          System.out.println("RESULTADOS");
-         for (int k = 0; k < 10; k++) {             
-             System.out.println("Letra: ["+cad[k]+"] se repitió: "+repetidas[k]);
+         for (int k = 0; k < cadena.length(); k++) {             
+             if(cad[k]!=  null){
+                 System.out.println("Letra: ["+cad[k]+"] se repitió: "+repetidas[k]);
+             }             
          }
          return "";
      }
